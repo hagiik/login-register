@@ -11,6 +11,7 @@ Jangan Lupa Kasih Bintang ^_^
 - ubah nama database sesuai dengan database kalian pada folder ` config/database.php ` 
 - ubah juga SMTP pada folder ` config/email.php ` isi sesuai Email kalian dan Password Aplikasi Kalian.
 - Untuk mengubah Tampilan Link Aktivasi kalian bisa menuju ke folder ` views/templates ` ada 2 file yakni message & reset-password.
+- untuk custom pesan email bisa menggunakan ` [My Stripo](https://my.stripo.email/) [bootstrapdash Template] `
 
 
 
