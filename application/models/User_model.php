@@ -57,6 +57,12 @@ class User_model extends CI_Model {
         return $this->db->get_where('users', ['email' => $email])->row();
     }
 
+    public function get_user_by_id($user_id) {
+        // Pastikan hasil query berupa objek
+        return $this->db->get_where('users', ['id' => $user_id])->row();
+    }
+    
+
     // Menyimpan token reset password
     public function save_password_reset_token($user_id, $token) {
         $data = array(

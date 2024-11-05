@@ -246,10 +246,11 @@ class Auth extends CI_Controller {
     }
     
 
+
     public function logout() {
-        $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
-        $this->session->sess_destroy();
+        $this->session->unset_userdata('logged_in');
+        $this->session->sess_destroy(); // Menghancurkan semua data sesi
         redirect('auth/login');
     }
     
