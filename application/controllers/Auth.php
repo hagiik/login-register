@@ -163,7 +163,9 @@ class Auth extends CI_Controller {
     
         if ($user) {
             $data['token'] = $token;
+            $this->load->view('_path/front_head');
             $this->load->view('auth/reset_password_form', $data);
+            $this->load->view('_path/front_foot');
         } else {
             $this->session->set_flashdata('error', 'Token reset password tidak valid atau sudah kedaluwarsa.');
             redirect('auth/forgot_password');
@@ -172,7 +174,7 @@ class Auth extends CI_Controller {
 
     public function save_new_password() {
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-        $this->form_validation->set_rules('confirm_password', 'Konfirmasi Password', 'required|matches[password]');
+        // $this->form_validation->set_rules('confirm_password', 'Konfirmasi Password', 'required|matches[password]');
     
         if ($this->form_validation->run() == FALSE) {
             $data['token'] = $this->input->post('token');
